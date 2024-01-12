@@ -25,6 +25,23 @@ int main()
 	// Use the created window object
 	glfwMakeContextCurrent(window);
 
+	// Load needed configuration for OpenGL
+	gladLoadGL();
+
+
+	// Viewport the window
+	// 0, 0 = bottom
+	//800,800 = top side of window
+	glViewport(0, 0,800,800 );
+
+
+	// Color window
+	glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
+	// Execute the coloring window
+	glClear(GL_COLOR_BUFFER_BIT);
+	// Inorder to see the buffer we need to swap the buffer
+	glfwSwapBuffers(window);
+
 	// Window loop
 	while (!glfwWindowShouldClose(window))
 	{
